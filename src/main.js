@@ -15,15 +15,15 @@ k.loadSprite("spritesheet", "./spritesheet.png", {
   },
 });
 
-k.loadSprite("map", "./map.png");
+k.loadSprite("map3", "./map3.png");
 
 k.setBackground(k.Color.fromHex("#311047"));
 
 k.scene("main", async () => {
-  const mapData = await (await fetch("./map.json")).json();
+  const mapData = await (await fetch("./map3.json")).json();
   const layers = mapData.layers;
 
-  const map = k.add([k.sprite("map"), k.pos(0), k.scale(scaleFactor)]);
+  const map = k.add([k.sprite("map3"), k.pos(0), k.scale(scaleFactor)]);
 
   const player = k.make([
     k.sprite("spritesheet", { anim: "idle-down" }),
@@ -54,7 +54,7 @@ k.scene("main", async () => {
           boundary.name,
         ]);
 
-        if (boundary.name) {
+        if (boundary.name&&boundary.name!=='outsidewall' ) {
           player.onCollide(boundary.name, () => {
             player.isInDialogue = true;
             displayDialogue(
@@ -76,6 +76,13 @@ k.scene("main", async () => {
             (map.pos.y + entity.y) * scaleFactor
           );
           k.add(player);
+    
+          // Display the 'welcome' dialogue when the player spawns
+          // player.isInDialogue = true;
+          // displayDialogue(dialogueData.welcome, () => {
+          //   player.isInDialogue = false;
+          // });
+    
           continue;
         }
       }
