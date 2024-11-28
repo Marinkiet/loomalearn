@@ -129,14 +129,23 @@ document.getElementById("close").addEventListener("click", () => {
 });
 
 const premiumGameBtn = document.getElementById("premium-game-btn");
-    const paymentModal = document.getElementById("payment-modal");
+const paymentModal = document.getElementById("payment-modal");
+const subscribeBtn = document.getElementById("subscribe-btn");
 
-    // Function to open the payment modal
-    premiumGameBtn.addEventListener("click", () => {
-      paymentModal.style.display = "block";
-    });
+// Function to open the payment modal
+premiumGameBtn.addEventListener("click", () => {
+  paymentModal.style.display = "block";
+  subscribeBtn.disabled = true; // Ensure the button is disabled
+});
 
-    // Function to close the payment modal
-    function closePaymentModal() {
-      paymentModal.style.display = "none";
-    }
+// Function to close the payment modal
+function closePaymentModal() {
+  paymentModal.style.display = "none";
+}
+
+// Show a message when the disabled Subscribe button is hovered over
+subscribeBtn.addEventListener("mouseover", () => {
+  if (subscribeBtn.disabled) {
+    alert("This feature is coming soon!");
+  }
+});

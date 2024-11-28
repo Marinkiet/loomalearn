@@ -78,6 +78,9 @@
     #start-game-btn:hover {
       border-color: #aaa;
     }
+    #choose-title{
+      color: black;
+    }
 
     #start-game-btn {
       background-color: #4CAF50;
@@ -93,10 +96,14 @@
       cursor: pointer;
       border: none;
       border-radius: 8px;
+      height: 35px;
     }
 
     #start-game-btn:active {
       transform: scale(0.98);
+    }
+    #premium-game-btn:hover{
+      
     }
 
     #game {
@@ -174,6 +181,7 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s;
+      height: 30px;
     }
 
     .modal-btn:hover {
@@ -201,6 +209,11 @@
     .close-btn:hover {
       background-color: #d32f2f;
     }
+    .modal-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
 
     /* Add other existing styles here */
   </style>
@@ -226,8 +239,10 @@
 
     <!-- Selection Form -->
     <div id="selection-form">
-      <h1>Welcome Looma,</h1>
-      <h3>Select Your Grade, Subject, and Topic</h3>
+        <img src="logo.png" alt="Looma Logo" class="logo" />
+        <h1>Welcome, Looma!</h1>
+        <h3 id="choose-title">Select Your Grade, Subject, and Topic</h3>
+      
       <label>
         <select id="grade-select">
           <option value="8">Grade 8</option>
@@ -250,12 +265,15 @@
       <button id="premium-game-btn">Start Premium Game</button>
     </div>
     <!-- Payment Modal -->
-    <div id="payment-modal">
+    <div id="payment-modal" style="display: none;">
       <div class="modal-header">Unlock Premium Features</div>
-      <p class="modal-description">Subscribe to access the AI-powered PDF upload feature for personalized learning!</p>
-      <button class="modal-btn">Subscribe for $4.99/month</button>
+      <p class="modal-description">
+        Coming soon, Subscribe to access the AI-powered PDF upload feature for personalized learning!
+      </p>
+      <button id="subscribe-btn" class="modal-btn" disabled>Subscribe for R9.99/month</button>
       <button class="close-btn" onclick="closePaymentModal()">Close</button>
     </div>
+    
 
     <!-- Game Canvas -->
     <canvas id="game"></canvas>
