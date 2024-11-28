@@ -3,13 +3,12 @@ export function displayDialogue(text, onDisplayEnd) {
   const dialogue = document.getElementById("dialogue");
   const closeBtn = document.getElementById("close");
 
-
   dialogueUI.style.display = "block";
-
 
   let index = 0;
   let currentText = "";
 
+  // Type out the text character by character
   const intervalRef = setInterval(() => {
     if (index < text.length) {
       currentText += text[index];
@@ -17,46 +16,29 @@ export function displayDialogue(text, onDisplayEnd) {
       index++;
       return;
     }
+    clearInterval(intervalRef); // Stop the interval once text is fully displayed
+  }, 20); // Adjust speed if needed
 
-    clearInterval(intervalRef);
-  }, 1);
-
-
+  // Function to handle closing the dialogue
   function onClose() {
     onDisplayEnd();
-    dialogueUI.style.display = "none";
-    dialogue.innerHTML = "";
-    clearInterval(intervalRef);
-    closeBtn.removeEventListener("click", onClose);
-    window.close(); // Automatically closes the tab
+    dialogueUI.style.display = "none"; // Simply hide the dialogue
+    dialogue.innerHTML = ""; // Clear the dialogue content
+    clearInterval(intervalRef); // Ensure the typing interval is cleared
+    closeBtn.removeEventListener("click", onClose); // Clean up event listener
   }
 
   closeBtn.addEventListener("click", onClose);
 
-  // Detect any answer selection and automatically close the tab
+  // Handle radio button answers if they exist
   document.querySelectorAll('input[type="radio"]').forEach((input) => {
     input.addEventListener("click", () => {
-      const selectedAnswer = input.value; // Store this for further processing if needed
-      onClose(); // Close the tab after capturing the answer
+      const selectedAnswer = input.value; // Store the selected answer
+      onClose(); // Close the dialogue box
     });
   });
-
-  function onCloseBtnClick() {
-    onDisplayEnd();
-    dialogueUI.style.display = "none";
-    dialogue.innerHTML = "";
-    clearInterval(intervalRef);
-    closeBtn.removeEventListener("click", onCloseBtnClick);
-  }
-
-  closeBtn.addEventListener("click", onCloseBtnClick);
-
-  addEventListener("keypress", (key) => {
-    if (key.code === "Enter") {
-      closeBtn.click();
-    }
-  });
 }
+
 
 export function setCamScale(k) {
   const resizeFactor = k.width() / k.height();
