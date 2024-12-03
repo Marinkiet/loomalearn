@@ -1,3 +1,4 @@
+document.getElementById("timer").style.display = "none";
 export function displayDialogue(text, onDisplayEnd) {
   const dialogueUI = document.getElementById("textbox-container");
   const dialogue = document.getElementById("dialogue");
@@ -48,45 +49,6 @@ export function setCamScale(k) {
     k.camScale(k.vec2(1.5));
   }
 }
-
-
-export function displayQuestions(questions, onAnswersSubmit) {
-  const dialogueUI = document.getElementById("textbox-container");
-  const dialogue = document.getElementById("dialogue");
-  const closeBtn = document.getElementById("close");
-  
-  dialogueUI.style.display = "block";
-  
-  let index = 0;
-  let userAnswers = Array(questions.length).fill(null);
-
-  function renderQuestion() {
-    dialogue.innerHTML = `
-      <p>${questions[index].question}</p>
-      <input type="text" id="answerInput" placeholder="Enter your answer" />
-      <p>${index + 1} of ${questions.length}</p>
-    `;
-  }
-
-  renderQuestion();
-
-  function onNextQuestion() {
-    const answerInput = document.getElementById("answerInput");
-    userAnswers[index] = answerInput.value;
-
-    index++;
-    if (index < questions.length) {
-      renderQuestion();
-    } else {
-      onAnswersSubmit(userAnswers);
-      dialogueUI.style.display = "none";
-      dialogue.innerHTML = "";
-      closeBtn.removeEventListener("click", onNextQuestion);
-    }
-  }
-
-  closeBtn.addEventListener("click", onNextQuestion);
-}
 document.getElementById("start-game-btn").addEventListener("click", () => {
   const grade = document.getElementById("grade-select").value;
   const subject = document.getElementById("subject-select").value;
@@ -95,11 +57,15 @@ document.getElementById("start-game-btn").addEventListener("click", () => {
   if (grade && subject && topic) {
     // Hide the selection form and show the game canvas and dialogue box
     document.getElementById("selection-form").style.display = "none";
+    document.getElementById("timer").style.display = "block";
+
     document.getElementById("game").style.display = "block";
     document.getElementById("textbox-container").style.display = "block";
+    document.getElementById("textbox-container").style.display = "block";
+
 
     console.log(`Starting game for: Grade ${grade}, Subject ${subject}, Topic ${topic}`);
-    // Initialize or load your game logic here if needed
+    
   } else {
     alert("Please select all options before starting the game.");
   }
@@ -135,3 +101,25 @@ subscribeBtn.addEventListener("mouseover", () => {
   }
 });
 
+// Initialize variables
+let seconds = 0;
+let timerInterval;
+const timerElement = document.getElementById('timer');
+
+// Function to start the timer
+function startTimer() {
+  timerInterval = setInterval(() => {
+    seconds++; // Increment time
+    timerElement.textContent = formatTime(seconds); // Update timer display
+  }, 1000); // Update every second
+}
+
+// Function to format time into MM:SS
+function formatTime(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+}
+
+// Call the startTimer function when the page loads
+startTimer();
