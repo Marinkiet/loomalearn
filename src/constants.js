@@ -223,10 +223,191 @@ export const dialogueData = {
       wall: `🚧 You’ve hit an invisible wall! 🚧 It seems there’s no way through here. Try finding your way around—it might be a good idea to explore other areas! 🕵️‍♂️`,
       bonus: `🎉 Congratulations! You’ve found the hidden BONUS tiki!, it's a unicorn 🦄 `,
       exit_test: `
-      🎉 Congratulations on completing the quiz journey! 🎉 
-      Hope you found all 36 questions plus the hidden treasure 📚
-    `,
-    
+<p>🎉 Congratulations on completing the quiz journey! 🎉 Hope you found all 36 questions plus the hidden treasure 📚</p>
+<h2>Quiz</h2>
+<h4>Answer all question to advance to the next level 🦄</h4>
+<div class="question">
+  <p>1. Photosynthesis is the process by which green plants make their food using sunlight, water, and carbon dioxide. 🌞</p>
+  <input type="text" placeholder="Please retype the above statement here" class="answer-input" data-question="1">
+  <span class="error-message" id="error1"></span>
+</div>
+<div class="question">
+  <p>2. What is the main pigment involved in photosynthesis? 🖌️</p>
+  <input type="text" placeholder="Enter the answer for the above statement here" class="answer-input" data-question="2">
+  <span class="error-message" id="error2"></span>
+</div>
+<div class="question">
+  <p>3. What are the three main ingredients needed for photosynthesis? 🌱</p>
+  <input type="text" placeholder="Enter the 3 ingredients" class="answer-input" data-question="3">
+  <span class="error-message" id="error3"></span>
+</div>
+<div class="question">
+  <p>4. In which part of the plant does photosynthesis primarily take place? 🌿</p>
+  <input type="text" placeholder="Enter the part of the plant" class="answer-input" data-question="4">
+  <span class="error-message" id="error4"></span>
+</div>
+<div class="question">
+  <p>5. What is the pigment responsible for absorbing sunlight in plant cells? 🌞</p>
+  <input type="text" placeholder="Enter the name of the pigment" class="answer-input" data-question="5">
+  <span class="error-message" id="error5"></span>
+</div>
+<div class="question">
+  <p>6. Which gas is released as a byproduct during photosynthesis? 💨</p>
+  <input type="text" placeholder="Enter the gas released" class="answer-input" data-question="6">
+  <span class="error-message" id="error6"></span>
+</div>
+<div class="question">
+  <p>7. Respiration is how organisms get energy by breaking down which type of molecule? 🔥</p>
+  <input type="text" placeholder="Enter the molecule" class="answer-input" data-question="7">
+  <span class="error-message" id="error7"></span>
+</div>
+<div class="question">
+  <p>8. In which organelle does respiration take place? 🔋</p>
+  <input type="text" placeholder="Enter the organelle" class="answer-input" data-question="8">
+  <span class="error-message" id="error8"></span>
+</div>
+<div class="question">
+  <p>9. What are the waste products of respiration? 🌍</p>
+  <input type="text" placeholder="Enter the waste products" class="answer-input" data-question="9">
+  <span class="error-message" id="error9"></span>
+</div>
+<div class="question">
+  <p>10. What is the role of mitochondria in respiration? 🧬</p>
+  <input type="text" placeholder="Enter the role of mitochondria" class="answer-input" data-question="10">
+  <span class="error-message" id="error10"></span>
+</div>
+<div class="question">
+  <p>11. Write the equation for photosynthesis: 🌱</p>
+  <input type="text" placeholder="Enter the photosynthesis equation" class="answer-input" data-question="11">
+  <span class="error-message" id="error11"></span>
+</div>
+<div class="question">
+  <p>12. Write the equation for respiration: 🔥</p>
+  <input type="text" placeholder="Enter the respiration equation" class="answer-input" data-question="12">
+  <span class="error-message" id="error12"></span>
+</div>
+<div class="question">
+  <p>13. How does photosynthesis contribute to life on Earth? 🌍</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="13">
+  <span class="error-message" id="error13"></span>
+</div>
+<div class="question">
+  <p>14. Why is photosynthesis important for plants? 🌱</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="14">
+  <span class="error-message" id="error14"></span>
+</div>
+<div class="question">
+  <p>15. What is the main difference between photosynthesis and respiration? 🔄</p>
+  <input type="text" placeholder="Enter the difference" class="answer-input" data-question="15">
+  <span class="error-message" id="error15"></span>
+</div>
+<div class="question">
+  <p>16. What is the source of energy for photosynthesis? ☀️</p>
+  <input type="text" placeholder="Enter the source of energy" class="answer-input" data-question="16">
+  <span class="error-message" id="error16"></span>
+</div>
+<div class="question">
+  <p>17. What are the products of photosynthesis? 🌱</p>
+  <input type="text" placeholder="Enter the products of photosynthesis" class="answer-input" data-question="17">
+  <span class="error-message" id="error17"></span>
+</div>
+<div class="question">
+  <p>18. How does respiration differ in plants and animals? 🐾🌿</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="18">
+  <span class="error-message" id="error18"></span>
+</div>
+<div class="question">
+  <p>19. What do we call the process of breaking down glucose for energy? 🔥</p>
+  <input type="text" placeholder="Enter the process" class="answer-input" data-question="19">
+  <span class="error-message" id="error19"></span>
+</div>
+<div class="question">
+  <p>20. What role does carbon dioxide play in photosynthesis? 🌱</p>
+  <input type="text" placeholder="Enter the role of carbon dioxide" class="answer-input" data-question="20">
+  <span class="error-message" id="error20"></span>
+</div>
+<div class="question">
+  <p>21. What happens to the oxygen produced during photosynthesis? 🌬️</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="21">
+  <span class="error-message" id="error21"></span>
+</div>
+<div class="question">
+  <p>22. Why do plants need sunlight for photosynthesis? 🌞</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="22">
+  <span class="error-message" id="error22"></span>
+</div>
+<div class="question">
+  <p>23. Can photosynthesis occur without sunlight? ☁️</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="23">
+  <span class="error-message" id="error23"></span>
+</div>
+<div class="question">
+  <p>24. What happens during respiration when oxygen is not available? 💀</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="24">
+  <span class="error-message" id="error24"></span>
+</div>
+<div class="question">
+  <p>25. What is anaerobic respiration? 🔥</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="25">
+  <span class="error-message" id="error25"></span>
+</div>
+<div class="question">
+  <p>26. How is glucose stored in plants? 🌱</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="26">
+  <span class="error-message" id="error26"></span>
+</div>
+<div class="question">
+  <p>27. What is the importance of chloroplasts in photosynthesis? 🍃</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="27">
+  <span class="error-message" id="error27"></span>
+</div>
+<div class="question">
+  <p>28. How do plants use the energy from photosynthesis? 🌱</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="28">
+  <span class="error-message" id="error28"></span>
+</div>
+<div class="question">
+  <p>29. Can animals perform photosynthesis? 🐾</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="29">
+  <span class="error-message" id="error29"></span>
+</div>
+<div class="question">
+  <p>30. What happens if a plant doesn’t get enough sunlight? 🌒</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="30">
+  <span class="error-message" id="error30"></span>
+</div>
+<div class="question">
+  <p>31. How does temperature affect the rate of photosynthesis? 🌡️</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="31">
+  <span class="error-message" id="error31"></span>
+</div>
+<div class="question">
+  <p>32. Why do plants need water for photosynthesis? 💧</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="32">
+  <span class="error-message" id="error32"></span>
+</div>
+<div class="question">
+  <p>33. What is the role of water in photosynthesis? 💧</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="33">
+  <span class="error-message" id="error33"></span>
+</div>
+<div class="question">
+  <p>34. How do plants make glucose from sunlight? 🌞</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="34">
+  <span class="error-message" id="error34"></span>
+</div>
+<div class="question">
+  <p>35. How do plants use glucose to grow? 🌱</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="35">
+  <span class="error-message" id="error35"></span>
+</div>
+<div class="question">
+  <p>36. What happens during respiration when oxygen is present? 🌬️</p>
+  <input type="text" placeholder="Enter your answer" class="answer-input" data-question="36">
+  <span class="error-message" id="error36"></span>
+</div>
 
 
+<button id="submit_quiz" >Submit</button>
+`
 };
